@@ -24,8 +24,10 @@ with paramiko.SSHClient() as client:
 
     # Interactive shell example
     # ssh = client.invoke_shell()
-    # ssh.send("ip address\n")
+    # ssh.send("cat\n")
+    # ssh.send("Hello OTUS!\n")
     # print(ssh.recv(3000).decode("utf-8"))
+    # ssh.send("^D")
 
     # sftp = client.open_sftp()
 
