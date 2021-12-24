@@ -12,11 +12,11 @@ with paramiko.SSHClient() as client:
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
     # Login using password
-    client.connect(HOST, username="agr",
-                   password=f'{os.getenv("SSH_PASSWD")}', port=22)
+    # client.connect(HOST, username="agr",
+    #                password=f'{os.getenv("SSH_PASSWD")}')
 
     # Login using public key
-    client.connect(HOST, username="agr", port=22)
+    client.connect(HOST, username="agr")
 
     stdin, stdout, stderr = client.exec_command("ls -la")
     # stdin, stdout, stderr = client.exec_command("touch file.py")
