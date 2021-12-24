@@ -3,7 +3,6 @@ import os
 
 
 HOST = "192.168.0.107"
-# Add ssh key of client to authorized_keys
 
 with paramiko.SSHClient() as client:
     # Load host key from ~/.ssh/known_hosts
