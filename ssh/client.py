@@ -1,5 +1,5 @@
 import paramiko
-import os
+import time
 
 
 HOST = "192.168.0.107"
@@ -25,11 +25,17 @@ with paramiko.SSHClient() as client:
     print(stdout.read().decode("utf-8"))
 
     # Interactive shell example
-    # ssh = client.invoke_shell()
-    # ssh.send("cat\n")
-    # ssh.send("Hello OTUS!\n")
-    # print(ssh.recv(3000).decode("utf-8"))
-    # ssh.send("^D")
+    # channel = client.invoke_shell()
+    # while not channel.recv_ready():
+    #     time.sleep(1)
+    # print(channel.recv(3000).decode("utf-8"))
+    #
+    # channel.send("cat\n")
+    # channel.send("Hello OTUS!\n")
+    # while not channel.recv_ready():
+    #     time.sleep(1)
+    # print(channel.recv(3000).decode("utf-8"))
+    # channel.send("^D")
 
     # sftp = client.open_sftp()
 
