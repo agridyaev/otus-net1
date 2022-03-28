@@ -20,6 +20,8 @@ with paramiko.SSHClient() as client:
 
     stdin, stdout, stderr = client.exec_command("ls -la")
     # stdin, stdout, stderr = client.exec_command("touch file.py")
+    # https://github.com/paramiko/paramiko/issues/1617#issuecomment-712703486
+    # stdin.close()
     print(stdout.read().decode("utf-8"))
 
     # Interactive shell example
